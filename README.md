@@ -28,7 +28,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [Frontend Mentor](https://www.frontendmentor.io/solutions/responsive-social-media-dashboard-with-theme-switcher-using-html-css-oH8rvYSkQ)
 - Live Site URL: [GitHub Pages](https://icewarrior01.github.io/Social-media-dashboard-with-theme-switcher/)
 
 ## My process
