@@ -1,0 +1,590 @@
+:root { 
+    /* Colors */
+
+    /* Primary */
+    --lime-green: hsl(163, 72%, 41%);
+    --bright-red: hsl(356, 69%, 56%);
+
+    --facebook: hsl(208, 92%, 53%);
+    --twitter: hsl(203, 89%, 53%);
+    --instagram: linear-gradient(to right, hsl(37, 97%, 70%), hsl(329, 70%, 58%));
+    --youtube: hsl(348, 97%, 39%);
+
+    /* Dark Theme */
+    --toggle-dark: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+
+    /* Light Theme */
+    --toggle-light: hsl(230, 22%, 74%);
+
+    /* Neutral */
+
+    /* Dark Theme */
+    --very-dark-blue-bg: hsl(230, 17%, 14%);
+    --very-dark-blue-top-bg-pattern: hsl(232, 19%, 15%);
+    --dark-desaturated-blue-card-bg: hsl(228, 28%, 20%);
+    --desaturated-blue-text: hsl(228, 34%, 66%);
+    --white-text: hsl(0, 0%, 100%);
+    
+    /* Light Theme */
+    --white-bg: hsl(0, 0%, 100%);
+    --very-pale-blue-top-bg-pattern: hsl(225, 100%, 98%);
+    --light-grayish-blue-card-bg: hsl(227, 47%, 96%);
+    --dark-grayish-blue-text: hsl(228, 12%, 44%);
+    --very-dark-blue-text: hsl(230, 17%, 14%);
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    overflow-x: hidden;
+    background-color: var(--white-bg);
+}
+
+.header {
+    width: 100vw;
+    border-radius: 0 0 6vw 6vw;
+    padding-top: 10vw;
+    padding-bottom: 21vw;
+    background-color: var(--very-pale-blue-top-bg-pattern);
+    z-index: -1;
+}
+
+.logo-wrapper {
+    position: relative;
+    width: 76vw;
+    height: 6.5vw;
+    margin-left: 6vw;
+}
+
+.logo {
+    position: absolute;
+    font-weight: 700;
+    font-size: 6.34vw;
+    top: -5.8vw;
+    left: 0.6vw;
+    color: var(--very-dark-blue-text);
+}
+
+.total-followers {
+    font-weight: 700;
+    font-size: 3.75vw;
+    width: 50vw;
+    margin-left: 6.7vw;
+    margin-top: 1.3vw;
+    color: var(--dark-grayish-blue-text);
+}
+
+.hr {
+    width: 87vw;
+    height: 0.3vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5.56vw;
+    border-radius: 1vw;
+    background-color: #898c9b;
+}
+
+.dark-mode-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 10vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2vw;
+    padding-left: 6.8vw;
+    padding-right: 6.8vw;
+}
+
+.dark-mode-label {
+    font-weight: 700;
+    font-size: 3.66vw;
+    margin-top: 2.6vw;
+    color: var(--dark-grayish-blue-text);
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 12.8vw;
+    height: 6.3vw;
+    margin-top: 2.2vw;
+    margin-right: 0.7vw;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--toggle-light);
+    transition: 0.4s;
+}
+
+.slider::before {
+    position: absolute;
+    content: '';
+    height: 4.9vw;
+    width: 4.9vw;
+    left: 6.9vw;
+    bottom: 0.7vw;
+    background: var(--white-bg);
+    transition: 0.4s;
+}
+
+input:checked + .slider {
+    background: var(--toggle-dark);
+}
+
+input:checked + .slider::before {
+    transform: translateX(-6.1vw);
+    background: var(--dark-desaturated-blue-card-bg);
+}
+
+.slider.round {
+    border-radius: 10vw;
+}
+
+.slider.round::before {
+    border-radius: 50%;
+}
+
+.followers-stats {
+    display: grid;
+    width: 86.8vw;
+    height: 247.5vw;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -12vw;
+    z-index: 1;
+    row-gap: 6.4vw;
+}
+
+.card {
+    width: 86vw;
+    height: 57vw;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 1.5vw;
+    border-top: 1.3vw solid;
+    z-index: 1;
+    background-color: var(--white-bg);
+}
+
+.facebook {
+    border-color: var(--facebook) !important;
+}
+
+.twitter {
+    border-color: var(--twitter) !important;
+}
+
+.instagram {
+    border-image-source: var(--instagram);
+    border-image-slice: 1;
+    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+}
+
+.youtube {
+    border-color: var(--youtube) !important;
+}
+
+.card-nickname-wrapper {
+    margin-top: 8vw;
+}
+
+.card-social {
+    margin-left: 31.9vw;
+    width: 5.2vw;
+    height: 5.2vw;
+    margin-top: -2.3vw;
+}
+
+.card-nickname {
+    font-size: 3.19vw;
+    font-weight: 700;
+    margin-left: 1.8vw;
+    color: var(--dark-grayish-blue-text);
+}
+
+.card-social-twitter {
+    width: 4.9vw;
+    height: 4.4vw;
+    margin-top: -2.5vw;
+    margin-left: 32.25vw;
+}
+
+.card-social-instagram {
+    margin-left: 29vw;
+    margin-top: -2.9vw;
+}
+
+.card-social-youtube {
+    margin-left: 32.1vw;
+    margin-top: -3.1vw;
+}
+
+.card-followers {
+    text-align: center;
+}
+
+.card-followers-number, .card-followers-description {
+    display: block;
+}
+
+.card-followers-number {
+    font-weight: 700;
+    font-size: 14vw;
+    margin-top: 3vw;
+}
+
+.card-followers-description {
+    text-transform: uppercase;
+    font-size: 3.1vw;
+    margin-top: -2vw;
+    letter-spacing: 1.35vw;
+    color: var(--dark-grayish-blue-text);
+}
+
+.today-status-wrapper {
+    text-align: center;
+    margin-top: 6vw;
+}
+
+.today-status-arrow {
+    width: 1.9vw;
+    margin-top: -1.5vw;
+    margin-left: 0vw;
+}
+
+.today-status {
+    font-weight: 700;
+    font-size: 3.2vw;
+    margin-left: 1vw;
+    color: var(--lime-green);
+}
+
+.today-status-youtube {
+    color: var(--bright-red);
+}
+
+.overview {
+    margin-top: 11vw;
+}
+
+.overview-header {
+    font-size: 6.4vw;
+    margin-left: 6.4vw;
+    color: var(--dark-grayish-blue-text);
+}
+
+.overview-cards-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    width: 87vw;
+    min-height: 295vw;
+    margin-top: 6vw;
+    row-gap: 3vw;
+    margin-bottom: 10vw;
+}
+
+.overview-card {
+    width: 86vw;
+    height: 33.1vw;
+    margin-left: 0.7vw;
+    border-radius: 1vw;
+}
+
+.page-views, .page-likes, .page-retweets {
+    display: block;
+    margin-top: 6.9vw;
+    margin-left: 6.4vw;
+    font-weight: 700;
+    font-size: 3.66vw;
+}
+
+.page-views-number, .page-likes-number, .page-retweets-number {
+    display: block;
+    font-weight: 700;
+    margin-left: 6.3vw;
+    margin-top: 4.45vw;
+    font-size: 8.5vw;
+}
+
+.overview-card-icon {
+    display: block;
+    margin-left: 72.55vw;
+    margin-top: -22.47vw;
+    width: 5.15vw;
+}
+
+.page-views-status-wrapper, .page-likes-status-wrapper, .page-retweets-status-wrapper {
+    margin-left: 70.1vw;
+    margin-top: 0vw;
+}
+
+.page-views-arrow, .page-likes-arrow, .page-retweets-arrow {
+    display: block;
+    width: 2.2vw;
+    margin-top: 12.3vw;
+}
+
+.page-views-status, .page-likes-status, .page-retweets-status {
+    display: block;
+    width: fit-content;
+    font-size: 3.3vw;
+    font-weight: 700;
+    color: var(--lime-green);
+    margin-left: 2.8vw;
+    margin-top: -3.15vw;
+}
+
+.red {
+    color: var(--bright-red);
+}
+
+.attribution { 
+    font-size: 3vw;
+    text-align: center;
+}
+
+.attribution a { 
+    color: hsl(228, 45%, 44%);
+}
+
+/* Dark Theme */
+.dark-theme-header {
+    background-color: var(--very-dark-blue-top-bg-pattern);
+}
+
+.dark-theme-text {
+    color: var(--white-text);
+}
+
+.dark-theme-background {
+    background-color: var(--very-dark-blue-bg);
+}
+
+.dark-theme-card {
+    background-color: var(--dark-desaturated-blue-card-bg);
+}
+
+.dark-theme-gray-text {
+    color: var(--desaturated-blue-text);
+}
+
+body, .header, .card, .overview-card {
+    transition: background 0.5s ease;
+}
+
+.logo, .card-nickname, .total-followers, .dark-mode-label, .card-followers-description, .page-views, .page-likes, .page-retweets, .card-followers-number, .overview-header, .page-views-number, .page-likes-number, .page-retweets-number, .attribution {
+    transition: color 0.5s ease;
+}
+
+@media screen and (min-width: 768px) {
+    .header {
+        border-radius: 0 0 1.5vw 1.5vw;
+        padding-top: 1vw;
+        padding-bottom: 12vw;
+    }
+
+    .logo-wrapper {
+        position: relative;
+        width: fit-content;
+        height: fit-content;
+        margin-left: 11.3vw;
+    }
+    
+    .logo {
+        position: relative;
+        font-size: 1.95vw;
+        top: 0vw;
+        left: 0vw;
+    }
+
+    .total-followers {
+        font-size: 1vw;
+        width: fit-content;
+        margin-left: 11.3vw;
+        margin-top: -1.5vw;
+    }
+
+    .hr {
+        display: none;
+    }
+
+    .dark-mode-wrapper {
+        width: 9.6vw;
+        height: fit-content;
+        margin-left: 79vw;
+        margin-top: -4vw;
+        padding-left: 0vw;
+        padding-right: 0vw;
+    }
+    
+    .dark-mode-label {
+        font-size: 1vw;
+        margin-top: 0.3vw;
+    }
+    
+    .switch {
+        width: 3.36vw;
+        height: 1.7vw;
+        margin-top: 0.1vw;
+        margin-right: 0vw;
+    }
+    
+    .slider::before {
+        height: 1.3vw;
+        width: 1.3vw;
+        left: 1.85vw;
+        bottom: 0.23vw;
+    }
+
+    .slider:hover {
+        background: var(--toggle-dark);
+    }
+    
+    input:checked + .slider::before {
+        transform: translateX(-1.72vw);
+    }
+
+    .followers-stats {
+        width: 77vw;
+        height: 15vw;
+        margin-top: -7.7vw;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 1.9vw;
+    }
+
+    .card {
+        margin-left: 0;
+        margin-right: 0;
+        width: 17.8vw;
+        height: 15vw;
+        border-radius: 0.5vw;
+        border-top-width: 0.3vw;
+    }
+
+    .card-social {
+        margin-left: 5.85vw;
+        margin-top: -12.4vw;
+        width: 1.4vw;
+        height: auto;
+    }
+
+    .card-nickname {
+        display: block;
+        font-size: 0.85vw;
+        margin-left: 7.9vw;
+        margin-top: -7.45vw;
+    }
+
+    .card-followers-number {
+        margin-top: 0;
+        font-size: 3.7vw;
+        margin-top: -3.8vw;
+    }
+
+    .card-followers-description {
+        font-size: 0.9vw;
+        margin-top: -0.5vw;
+        letter-spacing: 0.3vw;
+    }
+
+    .today-status-wrapper {
+        margin-top: 1.25vw;
+    }
+    
+    .today-status-arrow {
+        width: 0.6vw;
+        margin-top: 0vw;
+        margin-left: -0.4vw;
+    }
+
+    .today-status {
+        font-size: 0.83vw;
+        margin-left: -0vw;
+    }
+
+    .overview {
+        margin-top: 3vw;
+    }
+    
+    .overview-header {
+        font-size: 1.7vw;
+        margin-left: 11.38vw;
+    }
+    
+    .overview-cards-wrapper {
+        width: 78vw;
+        min-height: 0vw;
+        margin-top: 0vw;
+        row-gap: 1.6vw;
+        column-gap: 1vw;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        margin-bottom: 0vw;
+    }
+    
+    .overview-card {
+        width: 17.8vw;
+        height: 8.7vw;
+        margin-left: 0.4vw;
+        border-radius: 0.4vw;
+    }
+    
+    .page-views, .page-likes, .page-retweets {
+        margin-top: 1.7vw;
+        margin-left: 1.75vw;
+        font-size: 0.98vw;
+    }
+    
+    .page-views-number, .page-likes-number, .page-retweets-number {
+        margin-left: 1.8vw;
+        margin-top: 1.2vw;
+        font-size: 2.2vw;
+    }
+    
+    .overview-card-icon {
+        margin-left: 14.3vw;
+        margin-top: -5.8vw;
+        width: 1.35vw;
+    }
+    
+    .page-views-status-wrapper, .page-likes-status-wrapper, .page-retweets-status-wrapper {
+        margin-left: 13vw;
+        margin-top: 2.4vw;
+    }
+    
+    .page-views-arrow, .page-likes-arrow, .page-retweets-arrow {
+        width: 0.6vw;
+        margin-top: 3.25vw;
+        margin-left: 0.55vw;
+    }
+    
+    .page-views-status, .page-likes-status, .page-retweets-status {
+        font-size: 0.8vw;
+        margin-left: 1.4vw;
+        margin-top: -0.75vw;
+    }
+
+    .card:hover, .overview-card:hover {
+        cursor: pointer;
+        filter: brightness(1.37);
+    }
+
+    .attribution {
+        font-size: 2vw;
+    }
+}

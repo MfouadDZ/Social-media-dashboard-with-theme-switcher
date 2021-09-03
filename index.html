@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./reseter.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  
+  <title>Frontend Mentor | Social media dashboard with theme switcher</title>
+</head>
+<body>
+  <header class="header">
+    <div class="logo-wrapper">
+      <h1 class="logo">Social Media Dashboard</h1>
+    </div>
+    <h2 class="total-followers">Total Followers: 23,004</h2>
+    <div class="hr"></div>
+    <div class="dark-mode-wrapper">
+      <span class="dark-mode-label">Dark Mode</span>
+
+      <label class="switch">
+        <input type="checkbox" onclick="toggleDarkMode()">
+        <span class="slider round"></span>
+      </label>
+    </div>
+  </header>
+
+  <section class="followers-stats">
+    <div class="card facebook">
+      <div class="card-nickname-wrapper">
+        <img class="card-social card-social-facebook" src="./images/icon-facebook.svg" alt="Icon facebook">
+        <span class="card-nickname card-nickname-facebook">@nathanf</span>
+      </div>
+      
+      <div class="card-followers">
+        <span class="card-followers-number">1987</span>
+        <span class="card-followers-description">Followers</span>
+      </div>
+      
+      <div class="today-status-wrapper">
+        <img class="today-status-arrow" src="./images/icon-up.svg" alt="Icon up">
+        <span class="today-status">12 Today</span>
+      </div>
+    </div>
+
+    <div class="card twitter">
+      <div class="card-nickname-wrapper">
+        <img class="card-social card-social-twitter" src="./images/icon-twitter.svg" alt="Icon twitter">
+        <span class="card-nickname card-nickname-twitter">@nathanf</span>
+      </div>
+
+      <div class="card-followers">
+        <span class="card-followers-number">1044</span>
+        <span class="card-followers-description">Followers</span>
+      </div>
+      
+      <div class="today-status-wrapper">
+        <img class="today-status-arrow" src="./images/icon-up.svg" alt="Icon up">
+        <span class="today-status">99 Today</span>
+      </div>
+    </div>
+
+    <div class="card instagram">
+      <div class="card-nickname-wrapper">
+        <img class="card-social card-social-instagram" src="./images/icon-instagram.svg" alt="Icon instagram">
+        <span class="card-nickname card-nickname-instagram">@realnathanf</span>
+      </div>
+
+      <div class="card-followers">
+        <span class="card-followers-number">11k</span>
+        <span class="card-followers-description">Followers</span>
+      </div>
+      
+      <div class="today-status-wrapper">
+        <img class="today-status-arrow" src="./images/icon-up.svg" alt="Icon up">
+        <span class="today-status">1099 Today</span>
+      </div>
+    </div>
+
+    <div class="card youtube">
+      <div class="card-nickname-wrapper">
+        <img class="card-social card-social-youtube" src="./images/icon-youtube.svg" alt="Icon youtube">
+        <span class="card-nickname card-nickname-youtube">Nathan F.</span>
+      </div>
+
+      <div class="card-followers">
+        <span class="card-followers-number">8239</span>
+        <span class="card-followers-description">Subscribers</span>
+      </div>
+      
+      <div class="today-status-wrapper">
+        <img class="today-status-arrow" src="./images/icon-down.svg" alt="Icon down">
+        <span class="today-status today-status-youtube">144 Today</span>
+      </div>
+    </div>
+  </section>
+
+  <main class="overview">
+    <h2 class="overview-header">Overview - Today</h2>
+
+    <div class="overview-cards-wrapper">
+      <div class="overview-card facebook-views">
+        <span class="page-views">Page Views</span>
+        <span class="page-views-number">87</span>
+        <img class="overview-card-icon" src="./images/icon-facebook.svg" alt="Icon facebook">
+        <div class="page-views-status-wrapper">
+          <img class="page-views-arrow" src="./images/icon-up.svg" alt="Icon up">
+          <span class="page-views-status">3%</span>
+        </div>
+      </div>
+
+      <div class="overview-card facebook-likes">
+        <span class="page-likes">Likes</span>
+        <span class="page-likes-number">52</span>
+        <img class="overview-card-icon" src="./images/icon-facebook.svg" alt="Icon facebook">
+        <div class="page-likes-status-wrapper">
+          <img class="page-likes-arrow" src="./images/icon-down.svg" alt="Icon down">
+          <span class="page-likes-status red">2%</span>
+        </div>
+      </div>
+
+      <div class="overview-card instagram-likes">
+        <span class="page-likes">Likes</span>
+        <span class="page-likes-number">5462</span>
+        <img class="overview-card-icon" src="./images/icon-instagram.svg" alt="Icon instagram">
+        <div class="page-likes-status-wrapper">
+          <img class="page-likes-arrow" src="./images/icon-up.svg" alt="Icon up">
+          <span class="page-likes-status">2257%</span>
+        </div>
+      </div>
+
+      <div class="overview-card instagram-views">
+        <span class="page-views">Profile Views</span>
+        <span class="page-views-number">52k</span>
+        <img class="overview-card-icon" src="./images/icon-instagram.svg" alt="Icon instagram">
+        <div class="page-views-status-wrapper">
+          <img class="page-views-arrow" src="./images/icon-up.svg" alt="Icon up">
+          <span class="page-views-status">1375%</span>
+        </div>
+      </div>
+
+      <div class="overview-card twitter-retweets">
+        <span class="page-retweets">Retweets</span>
+        <span class="page-retweets-number">117</span>
+        <img class="overview-card-icon" src="./images/icon-twitter.svg" alt="Icon twitter">
+        <div class="page-retweets-status-wrapper">
+          <img class="page-retweets-arrow" src="./images/icon-up.svg" alt="Icon up">
+          <span class="page-retweets-status">303%</span>
+        </div>
+      </div>
+
+      <div class="overview-card twitter-likes">
+        <span class="page-likes">Likes</span>
+        <span class="page-likes-number">507</span>
+        <img class="overview-card-icon" src="./images/icon-twitter.svg" alt="Icon twitter">
+        <div class="page-likes-status-wrapper">
+          <img class="page-likes-arrow" src="./images/icon-up.svg" alt="Icon up">
+          <span class="page-likes-status">553%</span>
+        </div>
+      </div>
+
+      <div class="overview-card youtube-likes">
+        <span class="page-likes">Likes</span>
+        <span class="page-likes-number">107</span>
+        <img class="overview-card-icon" src="./images/icon-youtube.svg" alt="Icon youtube">
+        <div class="page-likes-status-wrapper">
+          <img class="page-likes-arrow" src="./images/icon-down.svg" alt="Icon down">
+          <span class="page-likes-status red">19%</span>
+        </div>
+      </div>
+
+      <div class="overview-card youtube-views">
+        <span class="page-views">Total Views</span>
+        <span class="page-views-number">1407</span>
+        <img class="overview-card-icon" src="./images/icon-youtube.svg" alt="Icon youtube">
+        <div class="page-views-status-wrapper">
+          <img class="page-views-arrow" src="./images/icon-down.svg" alt="Icon down">
+          <span class="page-views-status red">12%</span>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  
+  <footer class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="https://www.frontendmentor.io/profile/IcEWaRRiOr01" target="_blank">Alexander Orazdurdyev</a>.
+  </footer>
+  <script src="app.js"></script>
+</body>
+</html>
